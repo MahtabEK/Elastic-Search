@@ -6,13 +6,14 @@ The attached file test.json contains Reddit comments from December 2006, availab
 **Setup**
 - Make sure you have Java JDK 8 installed. This project is tested with java version 1.8.0_191. (Check by executing the command java -version in a terminal window.) You should see something like
 
-java version "1.8.0_191"
-Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
-Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
+    java version "1.8.0_191"
+    Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
+    Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 
 Java 9 is not recommended. It might cause some problems. Java can be downloaded at https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
 
 - Install Elasticsearch
+
 **On a Mac, Elasticsearch is most easily installed with “HomeBrew”**
 
 - Ensure command line tools are installed by running xcode-select --install in a terminal
