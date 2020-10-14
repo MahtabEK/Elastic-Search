@@ -1,0 +1,118 @@
+=> Cluster Health
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X GET "localhost:9200/_cat/health?v&pretty"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   296  100   296    0     0  22769      0 --:--:-- --:--:-- --:--:-- 22769epoch      
+timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
+1580225796 15:36:36  elasticsearch green           1         1      0   0    0    0        0             0                  -                100.0%
+
+******************************************************************************
+
+=> List All Indices
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X GET "localhost:9200/_cat/indices?v&pretty"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    83  100    83    0     0  10375      0 --:--:-- --:--:-- --:--:-- 11857
+health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
+
+******************************************************************************
+
+=> Create an Index
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X PUT "localhost:9200/customer?pretty&pretty"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    84  100    84    0     0    646      0 --:--:-- --:--:-- --:--:--   646{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "customer"
+}
+
+
+=> List All Indices
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X GET "localhost:9200/_cat/indices?v&pretty"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   208  100   208    0     0   8320      0 --:--:-- --:--:-- --:--:--  8666
+health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+yellow open   customer OCmLIy4yQE69z7O6Zf7ykQ   1   1          0            0       230b           230b
+
+******************************************************************************
+
+=> Index and Query a Document
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X PUT "localhost:9200/customer/_doc/1?pretty&pretty" -H 'Content-Type: application/json' -d'
+> {
+>   "name": "John Doe"
+> }
+> '
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   248  100   222  100    26   4036    472 --:--:-- --:--:-- --:--:--  4592{
+  "_index" : "customer",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "result" : "created",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 0,
+  "_primary_term" : 1
+}
+
+
+
+=> Retrieve that Document
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X GET "localhost:9200/customer/_doc/1?pretty&pretty"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   184  100   184    0     0   3607      0 --:--:-- --:--:-- --:--:--  3680{
+  "_index" : "customer",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "_seq_no" : 0,
+  "_primary_term" : 1,
+  "found" : true,
+  "_source" : {
+    "name" : "John Doe"
+  }
+}
+
+
+******************************************************************************
+
+=> Delete an Index
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X DELETE "localhost:9200/customer?pretty&pretty"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    28  100    28    0     0    583      0 --:--:-- --:--:-- --:--:--   583{
+  "acknowledged" : true
+}
+
+
+=> List All the Indexes
+
+mahtab@LAPTOP-QM32K7CA MINGW64 /
+$ curl -X GET "localhost:9200/_cat/indices?v&pretty"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    83  100    83    0     0   7545      0 --:--:-- --:--:-- --:--:--  8300
+health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
+
+******************************************************************************
