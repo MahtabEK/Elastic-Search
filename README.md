@@ -44,6 +44,8 @@ The attached file test.json contains Reddit comments from December 2006, availab
 
         - Follow the instructions here https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
 
+- Download test.zip and unpack it.
+
 If you have correctly installed everything and Elasticsearch is running, clicking this link http://localhost:9200 should show you a JSON object similar to
 
 {
