@@ -108,7 +108,7 @@ Answer the following questions using the three example search queries below.
 
 3) What can you deduce about the default stemming procedure used by Elasticsearch?
 
-4)Give a query that could be used to check whether or not Elasticsearch removes a common English stopword.
+4) Give a query that could be used to check whether or not Elasticsearch removes a common English stopword.
 
 Query 1
 
@@ -131,7 +131,7 @@ Elasticsearch uses what it calls “analyzers” to process text data when index
 
 1) Delete the all indices in your Elasticsearch instance before beginning this section. Submit the code you use to do so.
 
-2)To change how Elasticsearch indexes documents, we provide settings for an index before documents are added to it. (This is why we had to delete all indices before running these next commands.) Run the following two (quite large) commands to change the default stemming behaviour. The first defines a new analyzer, my_analyzer, which uses a stemmer. It creates a comments index and adds this analyzer to it. The second informs Elasticsearch that it should use my_analyzer when analyzing the body field of documents going into the comments index.
+2) To change how Elasticsearch indexes documents, we provide settings for an index before documents are added to it. (This is why we had to delete all indices before running these next commands.) Run the following two (quite large) commands to change the default stemming behaviour. The first defines a new analyzer, my_analyzer, which uses a stemmer. It creates a comments index and adds this analyzer to it. The second informs Elasticsearch that it should use my_analyzer when analyzing the body field of documents going into the comments index.
 
 curl -XPUT 'localhost:9200/comments?pretty' -H 'Content-Type: application/json' -d'
 {
