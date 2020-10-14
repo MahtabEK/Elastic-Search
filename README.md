@@ -86,7 +86,7 @@ For this project, we will use curl, which is a command-line program that communi
 
 3) Why we might replicate an index.
 
-4)Why your cluster health is yellow.
+4) Why your cluster health is yellow.
 
 - Indexing Reddit
 
