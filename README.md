@@ -1,0 +1,2 @@
+# Elastic-Search
+The goal of this project is to become familiar with the process of installing and starting Elasticsearch. Elasticsearch is an information retrieval system that can index documents as we saw in class, and can respond to queries. This assignment will help you begin to understand how modern search engines work, and how documents and queries can be represented for information retrieval tasks.
