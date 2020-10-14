@@ -12,31 +12,37 @@ The attached file test.json contains Reddit comments from December 2006, availab
     
     Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 
-Java 9 is not recommended. It might cause some problems. Java can be downloaded at https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
+    Java 9 is not recommended. It might cause some problems. Java can be downloaded at              
+    
+    https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
 
 - Install Elasticsearch
 
-**On a Mac, Elasticsearch is most easily installed with “HomeBrew”**
+    - On a Mac, Elasticsearch is most easily installed with “HomeBrew”
 
-- Ensure command line tools are installed by running xcode-select --install in a terminal
-- Homebrew can be installed by running the following command in a terminal:
-- /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-- Follow the instructions. On completing, run
-- brew update
-- brew tap elastic/tap
-- brew install elasticsearch
-- brew install elastic/tap/elasticsearch-full
-- Open terminal window and run elasticsearch. You will see a series of messages as it starts up. Keep this window open.
+        - Ensure command line tools are installed by running xcode-select --install in a terminal
+        - Homebrew can be installed by running the following command in a terminal:
+        - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        - Follow the instructions. On completing, run
+        - brew update
+        - brew tap elastic/tap
+        - brew install elasticsearch
+        - brew install elastic/tap/elasticsearch-full
+        - Open terminal window and run elasticsearch. You will see a series of messages as it starts up. Keep this window open.
 
-**On Windows**
+    - On Windows
 
-- Follow the instructions here, installing elasticsearch “as a service” (You will see the option.) https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html
-- To install curl, first install https://chocolatey.org/. Note that you can open a Command Prompt (Admin) by choosing it from the menu that appears if you hold the Windows key and press X.
-- Then into a new Command Prompt (Admin), menu type choco install curl
+        - Follow the instructions here, installing elasticsearch “as a service” (You will see the option.)      
+        
+         https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html
+         
+        - To install curl, first install https://chocolatey.org/. Note that you can open a Command Prompt (Admin) by choosing it            from the menu that appears if you hold the Windows key and press X.
+        
+        - Then into a new Command Prompt (Admin), menu type choco install curl
 
-**On a Linux or Linux-like environment**
+    - On a Linux or Linux-like environment**
 
-- Follow the instructions here https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
+        - Follow the instructions here https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
 
 If you have correctly installed everything and Elasticsearch is running, clicking this link http://localhost:9200 should show you a JSON object similar to
 
