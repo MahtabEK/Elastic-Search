@@ -178,5 +178,7 @@ Since you would have deleted your index as specified earlier in the section, bef
 Re-run the three queries from the previous section. Describe how the results have changed.
 Has the size of the index become larger or smaller compared with the previous runs? Why do you think this might be?
 
-The answers to the questions above can be found in "Answers.pdf".
+Find the answers to the questions above in "Elastic Search.pdf".
+
 For the indexing section, check out "elasticcommands.txt" file.
+
